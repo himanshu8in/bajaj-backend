@@ -15,13 +15,13 @@ app.post("/bfhl", (req, res) => {
 
     const numbers = data.filter(item => !isNaN(item));
     let alphabets = data.filter(item => /^[a-zA-Z]$/.test(item));
-    alphabets = alphabets.map(item => item.toLowerCase());
-    const highestAlphabet = alphabets.length ? [alphabets.sort().reverse()[0]] : [];
+    let case_alphabets = alphabets.map(item => item.toLowerCase());
+    const highestAlphabet = case_alphabets.length ? [case_alphabets.sort().reverse()[0]] : [];
     res.json({
         is_success: true,
         user_id: "himanshu_singh_14042004",
         email: "22bai70010@cuchd.in",
-        roll_number: "22bai70019",
+        roll_number: "22bai70010",
         numbers,
         alphabets,
         highest_alphabet: highestAlphabet
